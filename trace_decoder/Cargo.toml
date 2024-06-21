@@ -10,6 +10,7 @@ homepage.workspace = true
 keywords.workspace = true
 
 [dependencies]
+alloy = {workspace = true }
 bytes = { workspace = true }
 ciborium = { workspace = true }
 ciborium-io = { workspace = true }
