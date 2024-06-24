@@ -112,6 +112,7 @@ impl From<super::cli::Command> for RpcType {
         match command {
             super::cli::Command::Native { .. } => RpcType::Native,
             super::cli::Command::Jerigon { .. } => RpcType::Jerigon,
+            super::cli::Command::Reth { .. } => RpcType::Reth,
             _ => panic!("Unsupported command type"),
         }
     }

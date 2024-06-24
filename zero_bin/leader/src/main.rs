@@ -116,6 +116,18 @@ async fn main() -> Result<()> {
             keep_intermediate_proofs,
             backoff,
             max_retries,
+        }
+        | Command::Reth {
+            rpc_url,
+            block_interval,
+            checkpoint_block_number,
+            previous_proof,
+            proof_output_dir,
+            save_inputs_on_error,
+            block_time,
+            keep_intermediate_proofs,
+            backoff,
+            max_retries,
         } => {
             let previous_proof = get_previous_proof(previous_proof)?;
             let mut block_interval = BlockInterval::new(&block_interval)?;

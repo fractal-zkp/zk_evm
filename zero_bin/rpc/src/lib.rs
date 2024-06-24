@@ -15,6 +15,7 @@ use zero_bin_common::block_interval::BlockInterval;
 
 pub mod jerigon;
 pub mod native;
+pub mod reth;
 pub mod retry;
 
 /// The RPC type.
@@ -22,6 +23,7 @@ pub mod retry;
 pub enum RpcType {
     Jerigon,
     Native,
+    Reth,
 }
 
 /// Obtain the prover input for a given block interval
@@ -54,6 +56,9 @@ where
             }
             RpcType::Native => {
                 native::block_prover_input(&provider, block_id, checkpoint_state_trie_root).await?
+            }
+            RpcType::Reth => {
+                reth::block_prover_input(&provider, block_id, checkpoint_state_trie_root).await?
             }
         };
 
